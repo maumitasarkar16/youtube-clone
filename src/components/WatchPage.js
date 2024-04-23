@@ -24,7 +24,7 @@ const WatchPage = () => {
     const data = await fetch(process.env.REACT_APP_SINGLE_YOUTUBE_VIDEO_API + searchParams.get("v"))
     const json = await data.json();
     console.log(json.items)
-    setDetails(json.items[0])
+    setDetails(json.items[0] ? json.items[0] : json.items)
 
   }
 
